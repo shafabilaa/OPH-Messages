@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A Little Something for You ♡</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="floating-decoration" aria-hidden="true">
+        <span>✦</span>
+        <span>♡</span>
+        <span>✧</span>
+        <span>✿</span>
+        <span>♡</span>
+    </div>
+    <main class="container">
+        <section id="welcomeSection" class="welcome-section">
+            <p class="eyebrow">A LITTLE CORNER OF THE OPEN HOUSE & CAPSTONE EXPO DTETI</p>
+            <div class="envelope" aria-hidden="true">
+                <div class="envelope-back"></div>
+                <div class="envelope-paper">♡</div>
+                <div class="envelope-front"></div>
+                <div class="envelope-flap"></div>
+            </div>
+            <h1>
+                A Little Something
+                <br>
+                <span>for You.</span>
+            </h1>
+            <p class="description">
+                Somewhere in this little corner,
+                <br>
+                there's a message waiting just for you.
+            </p>
+            <div class="search-box">
+                <label for="nameInput">
+                    First things first, what's your name?
+                </label>
+                <input
+                    type="text"
+                    id="nameInput"
+                    placeholder="Your name goes here..."
+                    autocomplete="off"
+                >
+                <button id="searchButton">
+                    Find My Message <span>♡</span>
+                </button>
+                <p id="errorMessage" class="error-message"
+                   role="status" aria-live="polite"></p>
+            </div>
+            <p class="footer-note">
+                made with a little extra love ♡
+            </p>
+        </section>
+        <section id="messageSection" class="message-section hidden">
+            <p class="eyebrow">SOMETHING JUST FOR YOU</p>
+            <div class="opened-envelope" aria-hidden="true">
+                <span>💌</span>
+            </div>
+            <div class="letter">
+                <p class="letter-label">A LITTLE NOTE FOR YOU</p>
+                <h2 id="messageTitle"></h2>
+                <div class="letter-divider">✦ ✧ ♡ ✧ ✦</div>
+                <p id="messageContent" class="letter-content"></p>
+                <p class="signature">
+                    With love, ♡
+                </p>
+                <div class="surprise-area">
+                    <button id="surpriseButton">
+                        There's more... ✨
+                    </button>
+                    <div id="surpriseMessage" class="surprise-message hidden">
+                        <p id="surpriseContent"></p>
+                        <span>♡</span>
+                    </div>
+                </div>
+            </div>
+            <button id="backButton" class="back-button">
+                ← Back to the beginning
+            </button>
+            <p class="footer-note">
+                hope this made you smile ♡
+            </p>
+        </section>
+    </main>
+    <div id="confettiContainer" aria-hidden="true"></div>
+    <script src="script.js"></script>
+</body>
+</html>

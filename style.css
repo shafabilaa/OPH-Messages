@@ -1,0 +1,458 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cream: #fff8f3;
+    --pink: #d991a7;
+    --dark-pink: #b96f88;
+    --light-pink: #f8e5e9;
+    --purple: #b9a6d5;
+    --text: #59464d;
+    --muted: #a28b91;
+    --white: #ffffff;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background:
+        radial-gradient(circle at 10% 10%, #fce8eb, transparent 35%),
+        radial-gradient(circle at 90% 90%, #eee8f7, transparent 35%),
+        var(--cream);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px 18px;
+    overflow-x: hidden;
+}
+
+.floating-decoration span {
+    position: fixed;
+    z-index: -1;
+    color: #dca6b7;
+    opacity: 0.45;
+    animation: float 5s ease-in-out infinite;
+}
+
+.floating-decoration span:nth-child(1) {
+    top: 12%;
+    left: 12%;
+    font-size: 30px;
+}
+
+.floating-decoration span:nth-child(2) {
+    top: 22%;
+    right: 15%;
+    font-size: 35px;
+    animation-delay: 1s;
+}
+
+.floating-decoration span:nth-child(3) {
+    bottom: 15%;
+    left: 18%;
+    font-size: 28px;
+    animation-delay: 2s;
+}
+
+.floating-decoration span:nth-child(4) {
+    bottom: 22%;
+    right: 12%;
+    font-size: 35px;
+    animation-delay: 0.5s;
+}
+
+.floating-decoration span:nth-child(5) {
+    top: 55%;
+    left: 7%;
+    font-size: 22px;
+    animation-delay: 1.5s;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.eyebrow {
+    color: var(--dark-pink);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+}
+
+.footer-note {
+    color: var(--muted);
+    font-size: 11px;
+    margin-top: 35px;
+    letter-spacing: 1px;
+}
+
+.welcome-section {
+    animation: fadeIn 1s ease;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 8vw, 60px);
+    line-height: 1.15;
+    margin: 15px 0 20px;
+}
+
+h1 span {
+    color: var(--pink);
+    font-style: italic;
+}
+
+.description {
+    color: var(--muted);
+    line-height: 1.8;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.envelope {
+    width: 110px;
+    height: 80px;
+    margin: 0 auto 30px;
+    position: relative;
+    animation: envelopeFloat 3s ease-in-out infinite;
+}
+
+.envelope-back {
+    position: absolute;
+    inset: 0;
+    background: #eab9c6;
+    border-radius: 5px;
+}
+
+.envelope-paper {
+    position: absolute;
+    width: 80px;
+    height: 65px;
+    background: white;
+    left: 15px;
+    top: -18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--pink);
+    font-size: 25px;
+    border-radius: 4px;
+}
+
+.envelope-front {
+    position: absolute;
+    inset: 0;
+    background: #d991a7;
+    clip-path: polygon(0 0, 50% 55%, 100% 0, 100% 100%, 0 100%);
+    border-radius: 5px;
+}
+
+.envelope-flap {
+    position: absolute;
+    inset: 0;
+    background: #e8adbd;
+    clip-path: polygon(0 0, 100% 0, 50% 60%);
+}
+
+.search-box {
+    max-width: 430px;
+    margin: 0 auto;
+
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.85);
+
+    border: 1px solid #f1dfe2;
+    border-radius: 22px;
+
+    box-shadow: 0 15px 40px #c99aaa22;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.search-box label {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+
+    border: 1px solid #ead8de;
+    border-radius: 12px;
+
+    background: #fffaf9;
+    color: var(--text);
+
+    font-family: inherit;
+    font-size: 14px;
+
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: var(--pink);
+    box-shadow: 0 0 0 3px #d991a722;
+}
+
+input::placeholder {
+    color: #c5b3b8;
+}
+
+button {
+    border: none;
+    border-radius: 12px;
+
+    padding: 15px 20px;
+
+    background: var(--pink);
+    color: white;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: var(--dark-pink);
+    transform: translateY(-3px);
+    box-shadow: 0 7px 15px #b96f8833;
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:focus-visible {
+    outline: 3px solid var(--purple);
+    outline-offset: 3px;
+}
+
+.error-message {
+    font-size: 12px;
+    color: var(--dark-pink);
+    min-height: 16px;
+}
+
+.message-section {
+    animation: fadeIn 0.8s ease;
+}
+
+.opened-envelope {
+    font-size: 60px;
+    margin-bottom: 15px;
+    animation: popIn 0.7s ease;
+}
+
+.letter {
+    position: relative;
+
+    padding: 40px 35px;
+
+    background:
+        linear-gradient(135deg, #ffffff, #fffaf9);
+
+    border: 1px solid #f0dfe3;
+    border-radius: 20px;
+
+    box-shadow: 0 15px 40px #c99aaa25;
+}
+
+.letter-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    color: var(--muted);
+    margin-bottom: 22px;
+}
+
+.letter h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(25px, 6vw, 34px);
+    font-weight: 500;
+    color: var(--dark-pink);
+    margin-bottom: 20px;
+}
+
+.letter-divider {
+    color: var(--pink);
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+.letter-content {
+    white-space: pre-line;
+    line-height: 2;
+    font-size: 14px;
+    color: #79666c;
+}
+
+.signature {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--dark-pink);
+    margin-top: 30px;
+}
+
+.surprise-area {
+    margin-top: 30px;
+}
+
+.surprise-message {
+    margin-top: 20px;
+    padding: 22px;
+
+    border-radius: 15px;
+    background: var(--light-pink);
+
+    animation: popIn 0.6s ease;
+}
+
+.surprise-message p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--dark-pink);
+}
+
+.surprise-message span {
+    display: block;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.back-button {
+    margin-top: 25px;
+    background: transparent;
+    color: var(--dark-pink);
+    border: 1px solid #e9c5d0;
+}
+
+.back-button:hover {
+    background: var(--light-pink);
+    color: var(--dark-pink);
+}
+
+
+/* =================================
+   10. CONFETTI
+================================= */
+
+.confetti {
+    position: fixed;
+    top: -20px;
+    width: 9px;
+    height: 13px;
+    pointer-events: none;
+    z-index: 100;
+    animation: confettiFall 3s linear forwards;
+}
+
+
+/* =================================
+   11. ANIMATIONS
+================================= */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(10deg);
+    }
+}
+
+@keyframes envelopeFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes confettiFall {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+
+/* =================================
+   12. RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 25px 16px;
+    }
+
+    .search-box {
+        padding: 23px 18px;
+    }
+
+    .letter {
+        padding: 30px 22px;
+    }
+
+    .floating-decoration span {
+        opacity: 0.25;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
